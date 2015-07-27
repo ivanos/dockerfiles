@@ -1,4 +1,6 @@
-Leviathan Docker Container Network Orchestrator
+#
+# Leviathan Docker Container Network Orchestrator
+#
 FROM ubuntu:14.04
 
 MAINTAINER IvanOS version: 0.1
