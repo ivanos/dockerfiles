@@ -6,24 +6,24 @@ FROM ubuntu:14.04
 MAINTAINER IvanOS version: 0.1
 
 RUN apt-get update && \
-    apt-get install gcc && \
-    apt-get install make && \
-    apt-get install binutils && \
-    apt-get install autoconf && \ 
-    apt-get install ncurses && \ 
-    apt-get install ncurses-dev  && \ 
-    apt-get install libpam0g-dev  && \ 
-    apt-get install libpam4j-java && \
-    apt-get install openssl-dev && \
-    apt-get install libssl-dev && \
-    apt-get install default-jdk && \
-    apt-get install g++ && \
-    apt-get install unixodbc-dev && \ 
-    apt-get install fop && \
-    apt-get install xsltproc  && \
-    apt-get install xmllint && \
-    apt-get install libxml2-utils && \ 
-    apt-get install ruby-devapt-get install 
+    apt-get install -y gcc && \
+    apt-get install -y make && \
+    apt-get install -y binutils && \
+    apt-get install -y autoconf && \ 
+    apt-get install -y ncurses && \ 
+    apt-get install -y ncurses-dev  && \ 
+    apt-get install -y libpam0g-dev  && \ 
+    apt-get install -y libpam4j-java && \
+    apt-get install -y openssl-dev && \
+    apt-get install -y libssl-dev && \
+    apt-get install -y default-jdk && \
+    apt-get install -y g++ && \
+    apt-get install -y unixodbc-dev && \ 
+    apt-get install -y fop && \
+    apt-get install -y xsltproc  && \
+    apt-get install -y xmllint && \
+    apt-get install -y libxml2-utils && \ 
+    apt-get install -y ruby-dev
 
 
 CMD /usr/bin/bash
