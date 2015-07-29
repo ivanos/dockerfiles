@@ -9,7 +9,7 @@ RUN mkdir Git
 RUN cd Git && git clone https://github.com/ivanos/dobby_allinone_node
 RUN cd Git/dobby_allinone_node && make
 
-EXPOSE 4567
+EXPOSE 11133
 
 EXPOSE 8080
 
