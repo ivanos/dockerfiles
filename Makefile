@@ -4,7 +4,7 @@ all: ivanos leviathan
 
 
 ivanos:
-	cd ivanos && docker build -t sigstop/ivanos:devel-erl .
+	cd ivanos && docker build -t ivanos/core:devel-erl .
 
 leviathan:
-	cd leviathan && docker build -t sigstop/leviathan:devel-2 .
+	cd leviathan && docker build -t ivanos/leviathan:devel-2 .
