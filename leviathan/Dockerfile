@@ -1,7 +1,7 @@
 #
 # Leviathan Docker Container Network Orchestrator
 #
-FROM sigstop/ivanos:devel-erl
+FROM ivanos/core:devel-erl
 
 MAINTAINER IvanOS version: 0.1
 
