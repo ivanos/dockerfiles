@@ -5,8 +5,9 @@ FROM ivanos/core:priv-1
 
 MAINTAINER IvanOS version: 0.1
 
+RUN apt-get update && apt-get install -y bridge-utils
 RUN mkdir Git
-RUN cd Git && git clone -b ui-devel https://github.com/ivanos/leviathan_node
+RUN cd Git && git clone https://github.com/ivanos/leviathan_node
 RUN cd Git/leviathan_node && make
 
 EXPOSE 4567

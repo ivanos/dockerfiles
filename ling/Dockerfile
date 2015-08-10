@@ -16,10 +16,3 @@ RUN ldconfig
 RUN cd Git/libuv && ./autogen.sh && ./configure && make && make install
 RUN cd Git && git clone -b libuv https://github.com/cloudozer/ling.git
 RUN cd Git/ling && make
-RUN cd Git && git clone -b libuv https://github.com/cloudozer/lincx.git
-RUN cp Git/ling/railing/railing Git/lincx
-RUN cp Git/lincx/lincx.yml.sample Git/lincx/lincx.yml
-RUN cd Git/lincx && ./rebar get-deps 
-RUN cd Git/lincx && ./rebar co 
-RUN cd Git/lincx && ./railing image
-RUN ldconfig

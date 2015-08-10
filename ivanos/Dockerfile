@@ -32,6 +32,8 @@ RUN cd /usr/local/src && tar xvfz ./otp_src_17.5.tar.gz
 
 RUN cd /usr/local/src/otp_src_17.5 && ./configure && make && make install
 
+RUN \rm -rf /usr/local/src/otp_src_17.5*
+
 RUN ln `which nodejs` /usr/bin/node
 
 CMD /usr/bin/bash
