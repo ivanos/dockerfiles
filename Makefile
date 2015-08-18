@@ -10,7 +10,7 @@ privileged:
 	cd privileged && docker build -t ivanos/core:priv-1 .
 
 leviathan:
-	cd leviathan && docker build --no-cache -t ivanos/leviathan:rel-0.5 .
+	cd leviathan && docker build --no-cache -t ivanos/leviathan:rel-0.7.1 .
 
 ling:
 	cd ling && docker build --no-cache -t ivanos/ling:devel-1 .
