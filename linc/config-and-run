@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ $# = 0 ]; then
+    echo "Usage: $0 INTERFACE [INTERFACE...]" >&2
+    echo "Configures LINC to use the given interfaces for its ports," >&2
+    echo "and starts it." >&2
+    exit 1
+fi
+
+./scripts/config_gen -s 0 "$@" -c tcp:127.0.0.1:6653 -l 0.0.0.0:6654 -o rel/linc/releases/1.0/sys.config
+exec rel/linc/bin/linc console
