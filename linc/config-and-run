@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 DATAPATH-ID INTERFACE [INTERFACE...]" >&2
+    echo "Configures LINC to use the given interfaces for its ports," >&2
+    echo "and starts it." >&2
+    exit 1
+fi
+
+SYSCONFIG=rel/linc/releases/1.0/sys.config
+DPID=$1
+shift
+
+./scripts/config_gen -s 0 "$@" -c tcp:127.0.0.1:6653 -l 0.0.0.0:6654 -o $SYSCONFIG
+# Need to use the linc_us4_oe backend, to be able to specify the datapath id.
+sed -i -e "/{backend,/ {
+  s/linc_us4/linc_us4_oe/
+  s/$/ {datapath_id,\"$DPID\"},/
+}" $SYSCONFIG
+
+exec rel/linc/bin/linc console
