@@ -8,7 +8,8 @@ MAINTAINER IvanOS version: 0.1
 RUN apt-get update && apt-get install -y bridge-utils
 RUN mkdir Git
 RUN cd Git && git clone https://github.com/ivanos/leviathan_node
-RUN cd Git/leviathan_node && make
+WORKDIR Git/leviathan_node
+RUN git checkout multi-host-demo && make
 
 EXPOSE 4567
 
