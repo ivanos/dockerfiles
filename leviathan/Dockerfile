@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y bridge-utils
 RUN mkdir Git
 RUN cd Git && git clone https://github.com/ivanos/leviathan_node
 WORKDIR Git/leviathan_node
-RUN git checkout multi-host-demo && make
+RUN git checkout multi-host-demo
+COPY overlay_vars.config config/
+RUN make
 
 EXPOSE 4567
 
